@@ -321,7 +321,6 @@ def wordReplacements(tag): #Replaces phrases and single words
             else: tag[word] = 'purveyed'
         if(tag[word] == 'food'): #food
             rand = rando()
-            print(rand)
             if(rand > 1 and rand < 20):
                 print(True)
                 tag[word] = "vittles"
@@ -548,11 +547,11 @@ def rando():
 
 
 #TESTING--------------------------------TESTING
-while True:
-    s = input("Enter a string ")
-    print(s)
-    print(medieval(s))
-    s = input("Again?")
-    if(s == 'n'):
-        break
+#while True:
+#    s = input("Enter a string ")
+#    print(s)
+#    print(medieval(s))
+#    s = input("Again?")
+#    if(s == 'n'):
+#        break
 #TESTING--------------------------------TESTING
