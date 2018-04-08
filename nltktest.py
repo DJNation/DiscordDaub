@@ -212,6 +212,7 @@ personal = [    'town',
                 'sick']
 
 def medieval(s): #main function
+    if s == 'smexy': return 'avery is a dum fukr'
     s = checkTags(s)
     s = nounReplacements(s)
     s = wordReplacements(s)
