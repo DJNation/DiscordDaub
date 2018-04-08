@@ -1,7 +1,7 @@
 import discord
 import random
 import asyncio
-import requests
+#import requests
 from discord import Game
 from discord.ext.commands import Bot
 import os
@@ -34,11 +34,11 @@ async def medieval(ctx):
 @client.command(pass_context = True)
 async def img(ctx):
 
-        imgList = os.listdir("C:\Python36\Projects\Daubs\\") # Creates a list of filenames from your folder
+        imgList = os.listdir("/home/pi/DiscordDaub/Daubs/") # Creates a list of filenames from your folder
 
         imgString = random.choice(imgList) # Selects a random element from the list
 
-        path = "C:\Python36\Projects\Daubs\\" + imgString # Creates a string for the path to the file
+        path = "/home/pi/DiscordDaub/Daubs/" + imgString # Creates a string for the path to the file
 
         await client.send_file(ctx.message.channel, path) # Sends the image in the channel the command was used
 
