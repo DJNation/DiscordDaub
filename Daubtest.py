@@ -7,6 +7,7 @@ from discord.ext.commands import Bot
 import os
 import nltktest
 from nltktest import *
+#
 
 BOT_PREFIX = ("?", "!") #Bot prefixes
 TOKEN = 'NDMxMjA3NzcwNDk5NDQ4ODMy.DabZMQ.GPEv11wl_oMhEVhw9QtvZiAO7g4' #Bot specific "secret" token
