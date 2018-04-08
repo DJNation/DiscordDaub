@@ -270,7 +270,7 @@ idiotPreArr = [	"artless",
                 "tickle-brained",
                 "froward"]
 
-idiot = [       "mongrel",
+idiotArr = [       "mongrel",
                  "codpiece",
                  "jackanape",
                  "ape",
@@ -366,8 +366,8 @@ def idiotPre():
                 
 def idiot(x):
     if x == 0:
-        y = random.randrange(len(idiot)-1)
-        return idiot[x]
+        y = random.randrange(len(idiotArr)-1)
+        return idiotArr[x]
     if x == 1:
         y = random.randrange(len(idiotPlur)-1)
         return idiotPlur[x] 
