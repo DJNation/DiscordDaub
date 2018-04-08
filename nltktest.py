@@ -367,7 +367,7 @@ def idiotPre():
 def idiot(x):
     if x == 0:
         y = random.randrange(len(idiotArr)-1)
-        return idiotArr[x]
+        return idiotArr[y]
     if x == 1:
         y = random.randrange(len(idiotPlur)-1)
         return idiotPlur[y] 
