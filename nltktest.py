@@ -145,6 +145,10 @@ personal = [    'town',
                 'idiots',
                 'fools',
                 'bastards',
+                'jackass',
+                'jackasses',
+                'dumbass',
+                'dumbasses',
                 'morons',
                 'fucker',
                 'fuckers',
@@ -209,7 +213,140 @@ personal = [    'town',
                 'child',
                 'flag',
                 
-                'sick']
+                'sick',
+                'i']
+
+idiotPreArr = [	"artless",
+		"droning",
+		"fawning",
+		"warped",
+		"paunchy",
+		"puny",
+		"spongy",
+		"ruttish",
+		"vain",
+		"lumpish",
+		"craven",
+		"witless",
+		"pustulent",
+		"infested",
+		"ill-bred",
+		"blind",
+		"scurvy",
+    		"puny",
+	    	"fetid",
+                "vile",
+    		"gibbering",
+		"mewling",
+		"rank",
+                "fawning",
+                "moonish",
+                "brutish",
+                "malapert",
+                "curst",
+                "lack-linen",
+                "bottle-ailed",
+                "lyingest",
+                "embossed",
+                "cheating",
+                "crook-pated",
+                "base-court",
+                "hasty-witted",
+                "two-faced",
+                "pox-marked",
+                "toad-brained",
+                "errant",
+                "idle-headed",
+                "quailing",
+                "flap-mouthed",
+                "puking",
+                "fly-bitten",
+                "surly",
+                "tottering",
+                "villainous",
+                "rump-fed",
+                "bootless",
+                "churlish",
+                "tickle-brained",
+                "froward"]
+
+idiot = [       "mongrel",
+                 "codpiece",
+                 "jackanape",
+                 "ape",
+                 "coxcomb",
+                 "harlot",
+                 "hussy",
+                 "strumpet",
+                 "cur",
+                 "clot",
+                 "fool",
+                 "barnacle",
+                 "harpy",
+                 "wench",
+                 "churl",
+                 "pleb",
+                 "taffer",
+                 "scoundrel",
+                 "scalliwag",
+                 "mooncalf",
+                 "rapscallion",
+                 "doxy",
+                 "bawd",
+                 "tosspot",
+                 "cupshot",
+                 "recreant",
+                 "fustalarion",
+                 "scullion",
+                 "rampallion",
+                 "knave",
+                 "barbermonger",
+                 "boil",
+                 "plague-sore",
+                 "carbuncle",
+                 "whoreson",
+                 "clotpole",
+                 "lout",
+                 "gudgeon",
+                 "puttock",
+                 "skainsmate",
+                 "varlet",
+                 "bladder"]
+idiotPlur = [	"mongrels",
+                "codpieces",
+                "jackanapes",
+                "apes",
+                "coxcombes",
+                "harlots",
+                "hussies",
+                "strumpets",
+                "clots",
+                "fools",
+                "barnacles",
+                "harpies",
+                "wenches",
+                "churls",
+                "plebians",
+                "taffers",
+                "scoundrels",
+                "scalliwags",
+                "mooncalves",
+                "rapscallions",
+                "doxies",
+                "bawds",
+                "tosspots",
+                "cupshots",
+                "recreants",
+                "fustalarions",
+                "scullions",
+                "rampallions",
+                "knaves",
+                "barbermongerers",
+                "boils",
+                "plague-sores",
+                "carbuncles",
+                "whoresons",
+                "louts"]
 
 def medieval(s): #main function
     if s == 'smexy': return 'avery is a dum fukr'
@@ -220,8 +357,21 @@ def medieval(s): #main function
     return(prepend() + x)
 
 def prepend(): #prepends the message with a phrase
-   x = random.randrange(len(prepArr)-1)
-   return prepArr[x]
+    x = random.randrange(len(prepArr)-1)
+    return prepArr[x]
+
+def idiotPre():            
+    x = random.randrange(len(idiotPreArr)-1)
+    return idiotPreArr[x]
+                
+def idiot(x):
+    if x == 0:
+        y = random.randrange(len(idiot)-1)
+        return idiot[x]
+    if x == 1:
+        y = random.randrange(len(idiotPlur)-1)
+        return idiotPlur[x] 
+                
 def nounReplacements(s):    #replaces improper nouns (school, tree, plant) with a rate of .33
     pos = nltk.pos_tag(s)
     for i in range(len(s)):
@@ -261,9 +411,12 @@ def wordReplacements(tag): #Replaces phrases and single words
             if(tag[word+1] == 'were'):
                 tag[word] = "'twere"
                 tag[word+1] = ''
-
             if(tag[word] == 'teh'):
-                tag[word] == 'the'
+                tag[word] = 'the'
+            if(tag[word] == 'the'):
+                rand = rando()
+                if(rand > 50):
+                    tag[word] = 'ye'
     for word in range(len(tag)):
         if((tag[word] == 'shall' or tag[word] == 'will')  and tag[word+1] == 'not'): #shant
             tag[word] = "shan't"
@@ -434,9 +587,130 @@ def wordReplacements(tag): #Replaces phrases and single words
             rand = rando()
             if rand > 33:
                 tag[word] = "' till"
-
-
-        
+        if(tag[word] == 'joke'):
+            rand = rando()
+            if rand > 33:
+                tag[word] = "jest"
+            else: tag[word] = 'jape'
+        if(tag[word] == 'your'):
+            rand = rando()
+            if rand < 33:
+                tag[word] = "thy"
+            elif rand > 32 and rand < 66:
+                tag[word] = 'thine'
+            else: tag[word] = 'thyne'
+        if(tag[word] == 'my'):
+            rand = rando()
+            if rand > 50:
+                tag[word] = 'mine'
+        if(tag[word] == 'in'):
+            rand = rando()
+            if rand > 50:
+                tag[word] = 'within'
+        if(tag[word] == 'gold' or tag[word] == 'money'):
+            rand = rando()
+            if(rand >= 1 and rand <= 12):
+                tag[word] = 'bullion'
+            elif(rand > 12 and rand <= 25):
+                tag[word] = 'florins'
+            elif(rand > 25 and rand <= 37):
+                tag[word] = "pounds"
+            elif(rand > 37 and rand <= 50):
+                tag[word] = "pieces o'silver"
+            elif(rand > 50 and rand <= 63):
+                tag[word] = "groats"
+            elif(rand > 63 and rand <= 75):
+                tag[word] = "crowns"
+            elif(rand > 75 and rand <= 88):
+                tag[word] = "ingots"
+            else: tag[word] ='ducats'
+        if(tag[word] == 'balls' or tag[word] == 'groin'):
+            rand = rando()
+            if(rand >= 1 and rand <= 12):
+                tag[word] = 'leathers'
+            elif(rand > 12 and rand <= 25):
+                tag[word] = 'beans'
+            elif(rand > 25 and rand <= 37):
+                tag[word] = "poundables"
+            elif(rand > 37 and rand <= 50):
+                tag[word] = "nethers"
+            elif(rand > 50 and rand <= 63):
+                tag[word] = "nadchackles"
+            elif(rand > 63 and rand <= 75):
+                tag[word] = "buis"
+            elif(rand > 75 and rand <= 88):
+                tag[word] = "fellahs"
+            else: tag[word] ='coin purse'
+        if(tag[word] == 'go'):
+            rand = rando()
+            if rand > 50:
+                tag[word] = 'be off'
+            else: tag[word] = ''
+        if(tag[word] == 'will'):
+            rand = rando()
+            if rand > 50:
+                tag[word] = 'wilt'
+            else: tag[word] = 'wouldst'
+        if(tag[word] == 'does'):
+            rand = rando()
+            if rand < 33:
+                tag[word] = 'doeseth'
+            elif rand > 32 and rand < 66:
+                tag[word] = 'dost'
+            else: tag[word] = 'doth'
+        if(tag[word] == 'hello' or tag[word] == 'hi' or tag[word] == 'hey'):
+            rand = rando()
+            if(rand >= 20):
+                tag[word] = "good day"
+            elif(rand > 20 and rand <= 40):
+                tag[word] = "well met"
+            elif(rand > 40 and rand <= 60):
+                tag[word] = "tally ho"
+            elif(rand > 60 and rand <= 80):
+                tag[word] = "well meteth"
+            else: tag[word] ='ave'
+        if(tag[word] == 'yes'):
+            rand = rando()
+            if rand < 33:
+                tag[word] = 'aye'
+            elif rand < 66:
+                tag[word] = 'yea'
+            else: tag[word] = 'yeah verily'
+        if(tag[word] == 'no'):
+            rand = rando()
+            if rand > 50:
+                tag[word] = 'nay'
+            else: tag[word] = 'nayeth'
+        if(tag[word] == 'goodbye' or tag[word] == 'bye' or tag[word] == 'seeya' or tag[word] == 'goodnight'):
+            rand = rando()
+            if(rand >= 1 and rand <= 12):
+                tag[word] = 'good morrow'
+            elif(rand > 12 and rand <= 25):
+                tag[word] = 'godspeed'
+            elif(rand > 25 and rand <= 37):
+                tag[word] = "begone"
+            elif(rand > 37 and rand <= 50):
+                tag[word] = "adieu"
+            elif(rand > 50 and rand <= 63):
+                tag[word] = "cheerio"
+            elif(rand > 63 and rand <= 75):
+                tag[word] = "I bid thee good day"
+            elif(rand > 75 and rand <= 88):
+                tag[word] = "by your leave"
+            else: tag[word] ='pleasant journey'
+        if(tag[word] == 'idiot' or tag[word] == 'fool' or tag[word] == 'bastard' or tag[word] == 'moron'
+           or tag[word] == 'jackass' or tag[word] == 'dumbass'):
+                one = idiotPre()
+                two = idiotPre()
+                three = idiot(0)
+                tag[word] = one + ' ' + two + ' ' + three
+        if(tag[word] == 'idiots' or tag[word] == 'fools' or tag[word] == 'bastards' or tag[word] == 'morons'
+           or tag[word] == 'jackasss' or tag[word] == 'dumbass'):
+                one = idiotPre()
+                two = idiotPre()
+                three = idiot(1)
+                tag[word] = one + ' ' + two + ' ' + three
+            
         
     #contractions
     #for word in range(len(tag)):
