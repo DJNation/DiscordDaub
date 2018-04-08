@@ -367,10 +367,10 @@ def idiotPre():
 def idiot(x):
     if x == 0:
         y = random.randrange(len(idiotArr)-1)
-        return idiotArr[x]
+        return idiotArr[y]
     if x == 1:
         y = random.randrange(len(idiotPlur)-1)
-        return idiotPlur[x] 
+        return idiotPlur[y] 
                 
 def nounReplacements(s):    #replaces improper nouns (school, tree, plant) with a rate of .33
     pos = nltk.pos_tag(s)
