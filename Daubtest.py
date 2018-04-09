@@ -35,19 +35,18 @@ async def medieval(ctx):
 @client.command(pass_context = True)
 async def img(ctx):
 
-<<<<<<< HEAD
         imgList = os.listdir("/home/pi/DiscordDaub/Daubs/") # Creates a list of filenames from your folder
 
         imgString = random.choice(imgList) # Selects a random element from the list
 
         path = "/home/pi/DiscordDaub/Daubs/" + imgString # Creates a string for the path to the file
-=======
+
         imgList = os.listdir("/home/pi/DiscordDaub/Daubs") # Creates a list of filenames from your folder
 
         imgString = random.choice(imgList) # Selects a random element from the list
 
         path = "/home/pi/DiscordDaub/Daubs" + imgString # Creates a string for the path to the file
->>>>>>> 11d8e5eba7a96817e9bbfe82f322410b2df821e0
+
 
         await client.send_file(ctx.message.channel, path) # Sends the image in the channel the command was used
 
