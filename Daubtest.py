@@ -24,6 +24,7 @@ async def medieval(ctx):
         print(msg)
         await client.delete_message(ctx.message)
         await client.send_message(ctx.message.channel, nltktest.medieval(str(msg[1])))
+        print(nltktest.medieval(str(msg)))
     else: #Change to catch/exception
         print('Empty message handled: ' + str(msg))
         await client.delete_message(ctx.message)
@@ -34,6 +35,15 @@ async def medieval(ctx):
 @client.command(pass_context = True)
 async def img(ctx):
 
+<<<<<<< HEAD
+=======
+        imgList = os.listdir("/home/pi/DiscordDaub/Daubs/") # Creates a list of filenames from your folder
+
+        imgString = random.choice(imgList) # Selects a random element from the list
+
+        path = "/home/pi/DiscordDaub/Daubs/" + imgString # Creates a string for the path to the file
+
+>>>>>>> ad0817ea1dab8317fc05d070b8516357b860dddd
         imgList = os.listdir("/home/pi/DiscordDaub/Daubs") # Creates a list of filenames from your folder
 
         imgString = random.choice(imgList) # Selects a random element from the list
