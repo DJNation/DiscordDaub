@@ -41,20 +41,13 @@ async def img(ctx):
         imgString = random.choice(imgList) # Selects a random element from the list
 
         path = "/home/pi/DiscordDaub/Daubs/" + imgString # Creates a string for the path to the file
-<<<<<<< HEAD
-=======
 
->>>>>>> 06ee96a510128b82900ddbc1ec027ca0820fe25c
         imgList = os.listdir("/home/pi/DiscordDaub/Daubs") # Creates a list of filenames from your folder
 
         imgString = random.choice(imgList) # Selects a random element from the list
 
         path = "/home/pi/DiscordDaub/Daubs" + imgString # Creates a string for the path to the file
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 06ee96a510128b82900ddbc1ec027ca0820fe25c
         await client.send_file(ctx.message.channel, path) # Sends the image in the channel the command was used
 
 #hello command
