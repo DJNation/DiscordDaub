@@ -214,7 +214,10 @@ personal = [    'town',
                 'flag',
                 
                 'sick',
-                'i']
+                'i'
+                'hello',
+                'hey',
+                'hi']
 
 idiotPreArr = [	"artless",
 		"droning",
