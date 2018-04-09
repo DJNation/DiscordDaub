@@ -273,6 +273,7 @@ idiotPreArr = [	"artless",
                 "tickle-brained",
                 "froward"]
 
+
 idiotArr = [       "mongrel",
                  "codpiece",
                  "jackanape",
