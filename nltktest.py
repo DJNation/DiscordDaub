@@ -145,6 +145,8 @@ personal = [    'town',
                 'idiots',
                 'fools',
                 'bastards',
+                'bitch',
+                'bitches',
                 'jackass',
                 'jackasses',
                 'dumbass',
@@ -214,7 +216,7 @@ personal = [    'town',
                 'flag',
                 
                 'sick',
-                'i'
+                'i',
                 'hello',
                 'hey',
                 'hi']
@@ -353,7 +355,6 @@ idiotPlur = [	"mongrels",
                 "louts"]
 
 def medieval(s): #main function
-    if s == 'smexy': return 'avery is a dum fukr'
     s = checkTags(s)
     s = nounReplacements(s)
     s = wordReplacements(s)
@@ -403,13 +404,13 @@ def wordReplacements(tag): #Replaces phrases and single words
             if(tag[word+1] == 'was'):
                 tag[word] = "'twas"
                 tag[word+1] = ''
-            if(tag[word+1] == 'is'):
+            if(tag[word+1] == 'is' or tag[word+1] == "'s"):
                 tag[word] = "'tis"
                 tag[word+1] = ''
             if(tag[word+1] == 'would'):
                 tag[word] = "'twould"
                 tag[word+1] = ''
-            if(tag[word+1] == 'will'):
+            if(tag[word+1] == 'will' or tag[word+1] == "'ll"):
                 tag[word] = "'twill"
                 tag[word+1] = ''
             if(tag[word+1] == 'were'):
@@ -703,13 +704,13 @@ def wordReplacements(tag): #Replaces phrases and single words
                 tag[word] = "by your leave"
             else: tag[word] ='pleasant journey'
         if(tag[word] == 'idiot' or tag[word] == 'fool' or tag[word] == 'bastard' or tag[word] == 'moron'
-           or tag[word] == 'jackass' or tag[word] == 'dumbass'):
+           or tag[word] == 'jackass' or tag[word] == 'dumbass' or tag[word] == "bitch"):
                 one = idiotPre()
                 two = idiotPre()
                 three = idiot(0)
                 tag[word] = one + ' ' + two + ' ' + three
         if(tag[word] == 'idiots' or tag[word] == 'fools' or tag[word] == 'bastards' or tag[word] == 'morons'
-           or tag[word] == 'jackasss' or tag[word] == 'dumbass'):
+           or tag[word] == 'jackasss' or tag[word] == 'dumbass' or tag[word] == "bitches"):
                 one = idiotPre()
                 two = idiotPre()
                 three = idiot(1)
