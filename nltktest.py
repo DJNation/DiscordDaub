@@ -45,12 +45,12 @@ prepArr = [     "Forsooth, ",
 		"Kind sire, ",
 		"Sire, ",]
 
-prepGod = [     "&god's wounds, ",
-		"&god's &bodypart, ",
-                "By &god, ",
-		"By the Will of &godadj &god, ",
-		"By the &bodyadj &bodypart of the &godadj &god, ",
-		"By &godadj &god's &bodyadj &bodypart, ",]
+prepGod = [     "god's wounds, ",
+		"god's bodypart, ",
+                "By god, ",
+		"By the Will of godadj god, ",
+		"By the bodyadj bodypart of the godadj god, ",
+		"By godadj god's bodyadj bodypart, ",]
 
 postArr = [     " Anon!",
 		" Hum.",
@@ -118,26 +118,216 @@ killArr = [     "slay",
 		"best",
 		"foil"]
 
+godArr = [	 "Odin",
+                 "Bob",
+                 "Zeus",
+                 "Hera",
+                 "Thor",
+                 "Crom",
+                 "Mad-poet Navarth",
+                 "Cugel",
+                 "Wotsit",
+                 "Baron Boddisey",
+                 "Poseidon",
+                "Saint Mary",
+                "Pallus Athena",
+                "Loki",
+                "Erlik",
+                "Shoggoth",
+                "Omm",
+                "Vishnu",
+                "Azazoth",
+                "Father Odin",
+                "Allfather Odin",
+                "Cthulhu",
+                "Buddha",
+                "Aphrodite",
+                "Isis",
+                "Kali",
+                "Dionysus",
+                "Zarathustra",
+                "Croesus",
+                "Hermes",
+                "Venus",
+                "Montezuma",
+                "Popacatapetl",
+                "Hephaestus",
+                "Bubastes",
+                "Bacchus",
+                "Nebuchadnezzar",
+                "Assurbanipal",
+                "Sargon",
+                "Xerxes",
+                "Mulwatallish",
+                "Labarna",
+                "Hammurabi",
+                "Rameses",
+                "Minos",
+                "Tilgath-Pileser",
+                "Vercingetorix",
+                "Mithradites",
+                "Pericles",
+                "Belasarius",
+                "Archaemides",
+                "Heraclius",
+                "Imhotep",
+                "Artemis",
+                "Orthia",
+                "Phoebe",
+                "Hestia",
+                "Eros",
+                "Persephone",
+                "Minerva",
+                "Mercury",
+                "Aesculapius",
+                "Discordia",
+                "Hecate",
+                "Hespera"]
+
+godAdjArr = [	 "Almighty",
+                 "Unthinkable",
+                 "Unknowable",
+                 "All-knowing",
+                 "All-seeing",
+                 "Lecherous",
+                 "Scandalous",
+                 "Merciful",
+                 "Ravaging",
+                 "Thunderous",
+                "Wrathful",
+                "Distant",
+                "Vengeful",
+                "Supreme",
+                "Wise",
+                "Warlike",
+                "Jealous",
+                "Vindictive",
+                "Powerful",
+                "Adulterous",
+                "Licentious",
+                "Crafty",
+                "Benefical",
+                "Virtuous",
+                "Protective",
+                "Prophetic",
+                "Bloodthirsty",
+                "Murderous",
+                "Ruinous",
+                "Militant",
+                "Invisible",
+                "Omnipotent",
+                "Forgotten",
+                "Enlightened",
+                "Tempestuous",
+                "Destructive",
+                "Grim"]
+
+bodyArr = [	 "Beard",
+                 "Third Leg",
+                 "Scalp",
+                 "Eye",
+                 "Thigh",
+                 "Arm",
+                 "Sword",
+                 "Heel",
+                 "Gaze",
+                 "Tongue",
+                 "Hammer",
+                 "Toenail",
+                 "Nether Regions",
+                 "Liver",
+                 "Lights",
+                 "Spleen",
+                 "Gall",
+                 "Liver and Lights"]
+
+bodyAdjArr = [	 "Unknowable",
+                 "Unescapable",
+                 "Unfathomable",
+                 "Unthinkable",
+                 "Righteous",
+                 "Hairy",
+                 "Hairless",
+                 "Wandering",
+                 "Blistered",
+                 "Awe-inspiring",
+                 "Toothy",
+                 "Ravaged",
+                 "Aged",
+                 "Endless",
+                 "Wondrous",
+                "Unavoidable",
+                "Pestilent",
+                "Forgotten",
+                "Beautiful",
+                "Fertile",
+                "Prophetic",
+                "Musical",
+                "Helpful",
+                "Virginal",
+                "Curative",
+                "Bleak",
+                "Incessant",
+                "Sagely",
+                "Unfashionable",
+                "Unfaltering",
+                "Unfamiliar",
+                "Abysmal",
+                "Boundless",
+                "Eternal",
+                "Immeasurable",
+                "Infinite",
+                "Unending",
+                "Soundless",
+                "Incomprehensible",
+                "Inexplicable",
+                "Profound",
+                "unintelligible",
+                "Unbelievable",
+                "Impenetrable",
+                "Indecipherable",
+                "Esoteric",
+                "Enigmatic",
+                "Ancient",
+                "Venerable",
+                "Baneful",
+                "Contagious",
+                "Corrupting",
+                "Deadly",
+                "Deleterious",
+                "Evil",
+                "Noxious",
+                "Diseased",
+                "Pernicious",
+                "Pestiferous",
+                "Pestilential",
+                "Tainted",
+                "Contaminated",
+                "Pulchritudinous",
+                "Odoriferous",
+                "Misbegotten",
+                "Sacriligious"]
+
 personal = [    'town',
                 'village',
                 'home',
-                
+
                 'lol',
-                
+
                 'afk',
-                
+
                 'rofl'
-                
+
                 'water',
-                
+
                 'balls',
                 'groin',
-                
+
                 'gold',
                 'money',
-                
+
                 'joke',
-                
+
                 'idiot',
                 'fool',
                 'bastard',
@@ -155,24 +345,24 @@ personal = [    'town',
                 'fucker',
                 'fuckers',
                 'shit',
-                
+
                 'map',
                 'maps',
-                
+
                 'debuff',
                 'debuffed',
-                
+
                 'food',
-                
+
                 'man',
                 'guy',
                 'guys',
                 'men',
                 'boys',
-                
+
                 'party',
                 'group',
-                
+
                 'noob',
                 'newb',
                 'newbie',
@@ -185,19 +375,19 @@ personal = [    'town',
                 'nubs',
                 'lowbies',
                 'beginners',
-                
+
                 'level',
-                
+
                 'hehe',
                 'haha',
                 'heh',
                 'hah',
-                
+
                 'shop',
                 'store',
                 'vendor',
                 'seller',
-                
+
                 'friend',
                 'buddy',
                 'pal',
@@ -206,20 +396,22 @@ personal = [    'town',
                 'buddies',
                 'pals',
                 'mates',
-                
+
                 'girl',
                 'woman',
                 'girls',
                 'women',
-                
+
                 'child',
                 'flag',
-                
+
                 'sick',
                 'i',
                 'hello',
                 'hey',
-                'hi']
+                'hi',
+
+                'god']
 
 idiotPreArr = [	"artless",
 		"droning",
@@ -361,22 +553,49 @@ def medieval(s): #main function
     x = checkPunct(s)
     return(prepend() + x)
 
-def prepend(): #prepends the message with a phrase
-    x = random.randrange(len(prepArr)-1)
-    return prepArr[x]
+def godAppend():
+    x = random.randrange(len(prepGod)-1)
+    y = prepGod[x]
+    y = nltk.word_tokenize(y)
+    for i in range(len(y)):
+        if y[i] == 'god':
+            x = random.randrange(len(godArr)-1)
+            y[i] = godArr[x]
+        if y[i] == 'godadj':
+            x = random.randrange(len(godAdjArr)-1)
+            y[i] = godAdjArr[x]
+        if y[i] == 'bodypart':
+            x = random.randrange(len(bodyArr)-1)
+            y[i] = bodyArr[x]
+        if y[i] == 'bodyadj':
+            x = random.randrange(len(bodyAdjArr)-1)
+            y[i] = bodyAdjArr[x]
 
-def idiotPre():            
+    y = "".join([" "+i if not i.startswith("'") and i not in string.punctuation else i for i in y]).strip() + ' '
+    return y
+    
+def prepend(): #prepends the message with a phrase
+    x = random.randrange(0,3)
+    if x == 0:
+        x = random.randrange(len(prepArr)-1)
+        return prepArr[x]
+    if x == 1:
+        return godAppend()
+    if x == 2:
+        return ''
+
+def idiotPre():
     x = random.randrange(len(idiotPreArr)-1)
     return idiotPreArr[x]
-                
+
 def idiot(x):
     if x == 0:
         y = random.randrange(len(idiotArr)-1)
         return idiotArr[y]
     if x == 1:
         y = random.randrange(len(idiotPlur)-1)
-        return idiotPlur[y] 
-                
+        return idiotPlur[y]
+
 def nounReplacements(s):    #replaces improper nouns (school, tree, plant) with a rate of .33
     pos = nltk.pos_tag(s)
     for i in range(len(s)):
@@ -399,33 +618,53 @@ def personalized(s): #Checks if noun in question is in the personal list
 
 def wordReplacements(tag): #Replaces phrases and single words
     #for preceeding "it"
+    try:
+        for word in range(len(tag)):
+            if(tag[word] == 'it'):
+                if(tag[word+1] == 'was'):
+                    tag[word] = "'twas"
+                    tag[word+1] = ''
+                if(tag[word+1] == 'is' or tag[word+1] == "'s"):
+                    tag[word] = "'tis"
+                    tag[word+1] = ''
+                if(tag[word+1] == 'would'):
+                    tag[word] = "'twould"
+                    tag[word+1] = ''
+                if(tag[word+1] == 'will' or tag[word+1] == "'ll"):
+                    tag[word] = "'twill"
+                    tag[word+1] = ''
+                if(tag[word+1] == 'were'):
+                    tag[word] = "'twere"
+                    tag[word+1] = ''
+                if(tag[word] == 'teh'):
+                    tag[word] = 'the'
+                if(tag[word] == 'the'):
+                    rand = rando()
+                    if(rand > 50):
+                        tag[word] = 'ye'
+            if((tag[word] == 'shall' or tag[word] == 'will')  and tag[word+1] == 'not'): #shant
+                tag[word] = "shan't"
+                tag[word+1] = ''
+            if(tag[word] == 'over' and tag[word+1] == 'there'):  #over there
+               tag[word] = 'yonder'
+               tag[word+1] = ''
+            if(tag[word] == 'in' and tag[word+1] == 'the'): #in the
+               tag[word] = "i' the"
+               tag[word+1] = ''
+            if((tag[word] == 'thank' and tag[word+1] == 'you') or (tag[word] == 'ty')): #thank you & ty
+                x = random.randrange(len(thankYouArr)-1)
+                tag[word] = thankYouArr[x]
+                tag[word+1] = ''
+    except IndexError: pass
     for word in range(len(tag)):
-        if(tag[word] == 'it'):
-            if(tag[word+1] == 'was'):
-                tag[word] = "'twas"
-                tag[word+1] = ''
-            if(tag[word+1] == 'is' or tag[word+1] == "'s"):
-                tag[word] = "'tis"
-                tag[word+1] = ''
-            if(tag[word+1] == 'would'):
-                tag[word] = "'twould"
-                tag[word+1] = ''
-            if(tag[word+1] == 'will' or tag[word+1] == "'ll"):
-                tag[word] = "'twill"
-                tag[word+1] = ''
-            if(tag[word+1] == 'were'):
-                tag[word] = "'twere"
-                tag[word+1] = ''
-            if(tag[word] == 'teh'):
-                tag[word] = 'the'
-            if(tag[word] == 'the'):
-                rand = rando()
-                if(rand > 50):
-                    tag[word] = 'ye'
-    for word in range(len(tag)):
-        if((tag[word] == 'shall' or tag[word] == 'will')  and tag[word+1] == 'not'): #shant
-            tag[word] = "shan't"
-            tag[word+1] = ''
+        if(tag[word] == 'god' or tag[word] == 'God'):
+            if rando() < 80:
+                y = random.randrange(len(godArr)-1)
+                y = godArr[y]
+                x = random.randrange(len(godAdjArr)-1)
+                x = godAdjArr[x]
+                tag[word] = x + ' ' + y
+            else: tag[word] = 'God'
         if(tag[word] == 'is'): #is
             rand = rando()
             if(rand > 50):
@@ -449,7 +688,7 @@ def wordReplacements(tag): #Replaces phrases and single words
         if(tag[word] == 'debuff'): #debuff
             rand = rando()
             if(rand > 1 and rand <= 33):
-                tag[word] = 'ailment' 
+                tag[word] = 'ailment'
             elif(rand > 34 and rand <= 66):
                 tag[word] = 'sickness'
             else: tag[word] = 'pox'
@@ -715,22 +954,12 @@ def wordReplacements(tag): #Replaces phrases and single words
                 two = idiotPre()
                 three = idiot(1)
                 tag[word] = one + ' ' + two + ' ' + three
-            
-        
+
+
     #contractions
     #for word in range(len(tag)):
     #misc
     for word in range(len(tag)):
-        if(tag[word] == 'over' and tag[word+1] == 'there'):  #over there
-           tag[word] = 'yonder'
-           tag[word+1] = ''
-        if(tag[word] == 'in' and tag[word+1] == 'the'): #in the
-           tag[word] = "i' the"
-           tag[word+1] = ''
-        if((tag[word] == 'thank' and tag[word+1] == 'you') or (tag[word] == 'ty')): #thank you & ty
-            x = random.randrange(len(thankYouArr)-1)
-            tag[word] = thankYouArr[x]
-            tag[word+1] = ''
         if(tag[word] == 'you' or tag[word] == 'u'): #you
             x = random.randrange(len(youArr)-1)
             tag[word] = youArr[x]
@@ -745,9 +974,9 @@ def wordReplacements(tag): #Replaces phrases and single words
         if(tag[word] == 'kill' or tag[word] == 'gank'): #killed
             x = random.randrange(len(killArr)-1)
             tag[word] = killArr[x]
-        
-        
-        
+
+
+
     tag = "".join([" "+i if not i.startswith("'") and i not in string.punctuation else i for i in tag]).strip()
     return tag
 
@@ -776,7 +1005,7 @@ def checkTags(x):   #Checks if a mention occurs within the message, then concats
                             except IndexError:
                                 return(tag)
                         return(tag)
-        
+
 def checkPunct(s): #Checks the end of message, if there is no punctuation, assume period
     l = list(s)
     tag = nltk.pos_tag(nltk.word_tokenize(s))[-1] #tag = last character of message
@@ -785,7 +1014,9 @@ def checkPunct(s): #Checks the end of message, if there is no punctuation, assum
     if(tag[0] == '?'):
         return(questi(s))
     if(tag[0] == '.' or tag[0] != '!' or tag[0] != '?'):
-        return(postpend(s))
+        if rando() > 50:
+            return(postpend(s))
+        else: return s
 
 def exclam(s): # for '!'
     l = list(s)
@@ -793,7 +1024,7 @@ def exclam(s): # for '!'
     if(tag[0] == '!'):
         l[-1] = ''
         s = ''.join(l)
-        
+
     x = random.randrange(len(exclamArr)-1)
     return(s + exclamArr[x])
 
