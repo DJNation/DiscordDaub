@@ -1,7 +1,7 @@
 import nltk
 import random
 import string
-#initializes all word/phrase arrays for one-time use, rather than per function call
+#initializes all word/phrase arrays
 prepArr = [     "Forsooth, ",
 		"I say, ",
 		"I sayeth, ",
