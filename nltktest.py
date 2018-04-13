@@ -411,7 +411,9 @@ personal = [    'town',
                 'hey',
                 'hi',
 
-                'god']
+                'god',
+                'does',
+                'Does']
 
 idiotPreArr = [	"artless",
 		"droning",
@@ -620,7 +622,8 @@ def wordReplacements(tag): #Replaces phrases and single words
     #for preceeding "it"
     try:
         for word in range(len(tag)):
-            if(tag[word] == 'it'):
+            tagged = tag[word].lower()
+            if(tagged == 'it'):
                 if(tag[word+1] == 'was'):
                     tag[word] = "'twas"
                     tag[word+1] = ''
@@ -636,28 +639,29 @@ def wordReplacements(tag): #Replaces phrases and single words
                 if(tag[word+1] == 'were'):
                     tag[word] = "'twere"
                     tag[word+1] = ''
-                if(tag[word] == 'teh'):
+                if(tagged == 'teh'):
                     tag[word] = 'the'
-                if(tag[word] == 'the'):
+                if(tagged == 'the'):
                     rand = rando()
                     if(rand > 50):
                         tag[word] = 'ye'
-            if((tag[word] == 'shall' or tag[word] == 'will')  and tag[word+1] == 'not'): #shant
+            if((tagged == 'shall' or tagged == 'will')  and tag[word+1] == 'not'): #shant
                 tag[word] = "shan't"
                 tag[word+1] = ''
-            if(tag[word] == 'over' and tag[word+1] == 'there'):  #over there
+            if(tagged == 'over' and tag[word+1] == 'there'):  #over there
                tag[word] = 'yonder'
                tag[word+1] = ''
-            if(tag[word] == 'in' and tag[word+1] == 'the'): #in the
+            if(tagged == 'in' and tag[word+1] == 'the'): #in the
                tag[word] = "i' the"
                tag[word+1] = ''
-            if((tag[word] == 'thank' and tag[word+1] == 'you') or (tag[word] == 'ty')): #thank you & ty
+            if((tagged == 'thank' and tag[word+1] == 'you') or (tagged == 'ty')): #thank you & ty
                 x = random.randrange(len(thankYouArr)-1)
                 tag[word] = thankYouArr[x]
                 tag[word+1] = ''
     except IndexError: pass
     for word in range(len(tag)):
-        if(tag[word] == 'god' or tag[word] == 'God'):
+        tagged = tag[word].lower()
+        if(tagged == 'god' or tagged == 'God'):
             if rando() < 80:
                 y = random.randrange(len(godArr)-1)
                 y = godArr[y]
@@ -665,41 +669,41 @@ def wordReplacements(tag): #Replaces phrases and single words
                 x = godAdjArr[x]
                 tag[word] = x + ' ' + y
             else: tag[word] = 'God'
-        if(tag[word] == 'is'): #is
+        if(tagged == 'is'): #is
             rand = rando()
             if(rand > 50):
                 tag[word] = 'be'
-        if(tag[word] == 'map'): #map
+        if(tagged == 'map'): #map
             tag[word] = 'chart'
-        if(tag[word] == 'between'): #between
+        if(tagged == 'between'): #between
             tag[word] = 'betwixt'
-        if(tag[word] == 'aggro'): #aggro
+        if(tagged == 'aggro'): #aggro
             tag[word] = 'wrath'
-        if(tag[word] == 'buy'): #buy
+        if(tagged == 'buy'): #buy
             rand = rando()
             if(rand > 50):
                 tag[word] = 'purchase'
             else: tag[word] = 'obtain'
-        if(tag[word] == 'bought'): #bought
+        if(tagged == 'bought'): #bought
             rand = rando()
             if(rand > 50):
                 tag[word] = 'purchased'
             else: tag[word] = 'obtained'
-        if(tag[word] == 'debuff'): #debuff
+        if(tagged == 'debuff'): #debuff
             rand = rando()
             if(rand > 1 and rand <= 33):
                 tag[word] = 'ailment'
             elif(rand > 34 and rand <= 66):
                 tag[word] = 'sickness'
             else: tag[word] = 'pox'
-        if(tag[word] == 'debuffed' or tag[word] == 'sick'): #debuffed / sick
+        if(tagged == 'debuffed' or tagged == 'sick'): #debuffed / sick
             rand = rando()
             if(rand > 1 and rand <= 33):
                 tag[word] = 'ailed'
             elif(rand > 34 and rand <= 66):
                 tag[word] = 'sicknened'
             else: tag[word] = "pox't"
-        if(tag[word] == 'sell'): #sell
+        if(tagged == 'sell'): #sell
             rand = rando()
             if(rand > 1 and rand <= 25):
                 tag[word] = 'hawk'
@@ -708,7 +712,7 @@ def wordReplacements(tag): #Replaces phrases and single words
             elif(rand > 50 and rand <= 75):
                 tag[word] = "tender"
             else: tag[word] ='purvey'
-        if(tag[word] == 'sold'): #sold
+        if(tagged == 'sold'): #sold
             rand = rando()
             if(rand > 1 and rand <= 25):
                 tag[word] = "hawk'd"
@@ -717,7 +721,7 @@ def wordReplacements(tag): #Replaces phrases and single words
             elif(rand > 50 and rand <= 75):
                 tag[word] = "tendered"
             else: tag[word] = 'purveyed'
-        if(tag[word] == 'food'): #food
+        if(tagged == 'food'): #food
             rand = rando()
             if(rand > 1 and rand < 20):
                 print(True)
@@ -729,66 +733,66 @@ def wordReplacements(tag): #Replaces phrases and single words
             elif(rand > 60 and rand < 80):
                 tag[word] = "sustenance"
             else: tag[word] = 'viands'
-        if(tag[word]  == 'bet'):
+        if(tagged  == 'bet'):
            tag[word] = 'warrant'
-        if(tag[word] == 'hunting' or tag[word] == 'huntin'):
+        if(tagged == 'hunting' or tagged == 'huntin'):
             tag[word] = "a-huntin'"
-        if(tag[word] == 'coming' or tag[word] == 'comin'):
+        if(tagged == 'coming' or tagged == 'comin'):
             tag[word] = "a-comin'"
-        if(tag[word] == 'walking' or tag[word] == 'walkin'):
+        if(tagged == 'walking' or tagged == 'walkin'):
             tag[word] = "a-walkin'"
-        if(tag[word] == 'making' or tag[word] == 'makin'):
+        if(tagged == 'making' or tagged == 'makin'):
             tag[word] = "a-makin'"
-        if(tag[word] == 'of'):
+        if(tagged == 'of'):
             rand = rando()
             if rand >= 50:
                 tag[word] = "o'"
-        if(tag[word] == 'away'):
+        if(tagged == 'away'):
             rand = rando()
             if rand > 74:
                 tag[word] = 'aroint'
-        if(tag[word] == 'being'):
+        if(tagged == 'being'):
             rand = rando()
             if rand > 25:
                 tag[word] = "bein'"
-        if(tag[word] == 'why'):
+        if(tagged == 'why'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'wherefore'
-        if(tag[word] == 'fucker'):
+        if(tagged == 'fucker'):
             tag[word] = 'swiver'
-        if(tag[word] == 'fuckers'):
+        if(tagged == 'fuckers'):
             tag[word] = 'swivers'
-        if(tag[word] == 'shit'):
+        if(tagged == 'shit'):
             tag[word] = 'nightsoil'
-        if(tag[word] == 'child'):
+        if(tagged == 'child'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'poppet'
-        if(tag[word] == 'those'):
+        if(tagged == 'those'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'yon'
-        if(tag[word] == 'really'):
+        if(tagged == 'really'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'indeed'
             else: tag[word] = 'in truth'
-        if(tag[word] == 'often'):
+        if(tagged == 'often'):
             rand = rando()
             if rand > 33:
                 tag[word] = 'oft'
-        if(tag[word] == 'maybe'):
+        if(tagged == 'maybe'):
             rand = rando()
             if rand > 33:
                 tag[word] = 'mayhaps'
             if rand > 66:
                 tag[word] = 'perchance'
-        if(tag[word] == 'sure'):
+        if(tagged == 'sure'):
             rand = rando()
             if rand > 66:
                 tag[word] = 'shore'
-        if(tag[word] == 'assist'): #food
+        if(tagged == 'assist'): #food
             rand = rando()
             if(rand > 1 and rand <= 20):
                 tag[word] = "aid"
@@ -799,59 +803,59 @@ def wordReplacements(tag): #Replaces phrases and single words
             elif(rand > 60 and rand <= 80):
                 tag[word] = "assistance"
             else: tag[word] = 'succor'
-        if(tag[word] == 'could'):
+        if(tagged == 'could'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'couldst'
-        if(tag[word] == 'would'):
+        if(tagged == 'would'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'wouldst'
-        if(tag[word] == 'later'):
+        if(tagged == 'later'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'anon'
-        if(tag[word] == 'here'):
+        if(tagged == 'here'):
             rand = rando()
             if rand > 25:
                 tag[word] = 'hither'
-        if(tag[word] == 'enough'):
+        if(tagged == 'enough'):
             rand = rando()
             if rand > 66:
                 tag[word] = 'enow'
-        if(tag[word] == 'though'):
+        if(tagged == 'though'):
             rand = rando()
             if rand > 66:
                 tag[word] = "tho'"
-        if(tag[word] == 'underneath' or tag[word] == 'beneath' or tag[word] == 'under'):
+        if(tagged == 'underneath' or tagged == 'beneath' or tagged == 'under'):
             rand = rando()
             if rand > 50:
                 tag[word] = " 'neath"
-        if(tag[word] == 'until'):
+        if(tagged == 'until'):
             rand = rando()
             if rand > 33:
                 tag[word] = "' till"
-        if(tag[word] == 'joke'):
+        if(tagged == 'joke'):
             rand = rando()
             if rand > 33:
                 tag[word] = "jest"
             else: tag[word] = 'jape'
-        if(tag[word] == 'your'):
+        if(tagged == 'your'):
             rand = rando()
             if rand < 33:
                 tag[word] = "thy"
             elif rand > 32 and rand < 66:
                 tag[word] = 'thine'
             else: tag[word] = 'thyne'
-        if(tag[word] == 'my'):
+        if(tagged == 'my'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'mine'
-        if(tag[word] == 'in'):
+        if(tagged == 'in'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'within'
-        if(tag[word] == 'gold' or tag[word] == 'money'):
+        if(tagged == 'gold' or tagged == 'money'):
             rand = rando()
             if(rand >= 1 and rand <= 12):
                 tag[word] = 'bullion'
@@ -868,7 +872,7 @@ def wordReplacements(tag): #Replaces phrases and single words
             elif(rand > 75 and rand <= 88):
                 tag[word] = "ingots"
             else: tag[word] ='ducats'
-        if(tag[word] == 'balls' or tag[word] == 'groin'):
+        if(tagged == 'balls' or tagged == 'groin'):
             rand = rando()
             if(rand >= 1 and rand <= 12):
                 tag[word] = 'leathers'
@@ -885,24 +889,24 @@ def wordReplacements(tag): #Replaces phrases and single words
             elif(rand > 75 and rand <= 88):
                 tag[word] = "fellahs"
             else: tag[word] ='coin purse'
-        if(tag[word] == 'go'):
+        if(tagged == 'go'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'be off'
             else: tag[word] = ''
-        if(tag[word] == 'will'):
+        if(tagged == 'will'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'wilt'
             else: tag[word] = 'wouldst'
-        if(tag[word] == 'does'):
+        if(tagged == 'does' or tagged == 'Does'):
             rand = rando()
             if rand < 33:
                 tag[word] = 'doeseth'
             elif rand > 32 and rand < 66:
                 tag[word] = 'dost'
             else: tag[word] = 'doth'
-        if(tag[word] == 'hello' or tag[word] == 'hi' or tag[word] == 'hey'):
+        if(tagged == 'hello' or tagged == 'hi' or tagged == 'hey'):
             rand = rando()
             if(rand >= 20):
                 tag[word] = "good day"
@@ -913,19 +917,19 @@ def wordReplacements(tag): #Replaces phrases and single words
             elif(rand > 60 and rand <= 80):
                 tag[word] = "well meteth"
             else: tag[word] ='ave'
-        if(tag[word] == 'yes'):
+        if(tagged == 'yes'):
             rand = rando()
             if rand < 33:
                 tag[word] = 'aye'
             elif rand < 66:
                 tag[word] = 'yea'
             else: tag[word] = 'yeah verily'
-        if(tag[word] == 'no'):
+        if(tagged == 'no'):
             rand = rando()
             if rand > 50:
                 tag[word] = 'nay'
             else: tag[word] = 'nayeth'
-        if(tag[word] == 'goodbye' or tag[word] == 'bye' or tag[word] == 'seeya' or tag[word] == 'goodnight'):
+        if(tagged == 'goodbye' or tagged == 'bye' or tagged == 'seeya' or tagged == 'goodnight'):
             rand = rando()
             if(rand >= 1 and rand <= 12):
                 tag[word] = 'good morrow'
@@ -942,14 +946,14 @@ def wordReplacements(tag): #Replaces phrases and single words
             elif(rand > 75 and rand <= 88):
                 tag[word] = "by your leave"
             else: tag[word] ='pleasant journey'
-        if(tag[word] == 'idiot' or tag[word] == 'fool' or tag[word] == 'bastard' or tag[word] == 'moron'
-           or tag[word] == 'jackass' or tag[word] == 'dumbass' or tag[word] == "bitch"):
+        if(tagged == 'idiot' or tagged == 'fool' or tagged == 'bastard' or tagged == 'moron'
+           or tagged == 'jackass' or tagged == 'dumbass' or tagged == "bitch"):
                 one = idiotPre()
                 two = idiotPre()
                 three = idiot(0)
                 tag[word] = one + ' ' + two + ' ' + three
-        if(tag[word] == 'idiots' or tag[word] == 'fools' or tag[word] == 'bastards' or tag[word] == 'morons'
-           or tag[word] == 'jackasss' or tag[word] == 'dumbass' or tag[word] == "bitches"):
+        if(tagged == 'idiots' or tagged == 'fools' or tagged == 'bastards' or tagged == 'morons'
+           or tagged == 'jackasss' or tagged == 'dumbass' or tagged == "bitches"):
                 one = idiotPre()
                 two = idiotPre()
                 three = idiot(1)
@@ -960,18 +964,19 @@ def wordReplacements(tag): #Replaces phrases and single words
     #for word in range(len(tag)):
     #misc
     for word in range(len(tag)):
-        if(tag[word] == 'you' or tag[word] == 'u'): #you
+        tagged = tag[word].lower()
+        if(tagged == 'you' or tagged == 'u'): #you
             x = random.randrange(len(youArr)-1)
             tag[word] = youArr[x]
-        if(tag[word] == 'are'): # are
+        if(tagged == 'are'): # are
             tag[word] = 'art'
-        if(tag[word] == 'lol'): #lol
+        if(tagged == 'lol'): #lol
             x = random.randrange(len(lolArr)-1)
             tag[word] = lolArr[x]
-        if(tag[word] == 'killed' or tag[word] == 'beaten' or tag[word] == 'fucked'): #killed
+        if(tagged == 'killed' or tagged == 'beaten' or tagged == 'fucked'): #killed
             x = random.randrange(len(killPastArr)-1)
             tag[word] = killPastArr[x]
-        if(tag[word] == 'kill' or tag[word] == 'gank'): #killed
+        if(tagged == 'kill' or tagged == 'gank'): #killed
             x = random.randrange(len(killArr)-1)
             tag[word] = killArr[x]
 
